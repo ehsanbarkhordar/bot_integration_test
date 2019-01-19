@@ -46,26 +46,8 @@ async def start_bot(websocket, path):
     read_message_update_json = {"$type": "Response", "id": "0", "body": {"date": "1547895898824"}}
     read_message_update_str = json.dumps(read_message_update_json)
     await websocket.send(read_message_update_str)
-
-    websocket.close()
-
-    #
-    # greeting = f"Hello {name}!"
-    #
-    # await websocket.send(greeting)
-    # print(f"> {greeting}")
-
-
-# async def hello(websocket, path):
-#     await websocket.send("")
-#
-#     name = await websocket.recv()
-#     print(f"< {name}")
-#
-#     greeting = f"Hello {name}!"
-#
-#     await websocket.send(greeting)
-#     print(f"> {greeting}")
+    print("*********************SuccessFull")
+    await websocket.recv()
 
 
 start_server = websockets.serve(start_bot, 'localhost', '8765')
