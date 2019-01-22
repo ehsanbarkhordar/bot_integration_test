@@ -34,7 +34,7 @@ def failure_send_message(response, user_data):
         my_logger.error("max tried", extra={"tag": "error"})
 
 
-@dispatcher.command_handler("/start")
+@dispatcher.default_handler()
 def main_menu(bot, update):
     user_peer = update.get_effective_user()
     btn_list = [TemplateMessageButton(text="a", value="a", action=0),

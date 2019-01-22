@@ -2,6 +2,7 @@ import json
 
 from balebot.models.base_models import Peer
 from balebot.models.constants.errors import Error
+from balebot.models.constants.message_type import MessageType
 from balebot.models.messages import TextMessage
 
 
@@ -51,7 +52,7 @@ class ServerDocumentMessage:
                 "date": "1548071082638",
                 "randomId": "-5360894418397220326",
                 "message": {
-                    "$type": "Document",
+                    "$type": MessageType.document_message,
                     "fileId": self.file_id,
                     "accessHash": self.access_hash,
                     "fileSize": self.file_size,
